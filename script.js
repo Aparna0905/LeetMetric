@@ -1,5 +1,5 @@
-    // first we will make DOMContent load
-    // we have used proxy server i.e https://cors-anywhere.herokuapp.com/corsdemo go to this then click on request temporary access
+    
+    
     document.addEventListener("DOMContentLoaded",function(){
         const searchButton=document.getElementById("search-btn");
         const usernameInput=document.getElementById("user-input");
@@ -11,7 +11,7 @@
         const mediumLabel=document.getElementById("medium-label");
         const hardLabel=document.getElementById("hard-label");
         const cardStatsContainer=document.querySelector(".stats-cards");
-        //return true or false
+        
         function validateUserName(username){
             if(username.trim()===""){
                 alert("Username should not be empty");
@@ -30,7 +30,7 @@
                 searchButton.textContent="Searching..";
                 searchButton.disabled=true;
                 
-                // const response=await fetch(url);
+                
                 const proxyUrl='https://cors-anywhere.herokuapp.com/';
                 const targetUrl='https://leetcode.com/graphql/';
                 const myHeaders=new Headers();
@@ -92,10 +92,9 @@
     </div>
 `).join("");
        }
-        searchButton.addEventListener('click',function(){ //whenever someone will click on search button we will fetch the username
+        searchButton.addEventListener('click',function(){ 
             const username=usernameInput.value;
-            console.log("logging username: ",username);//go to inspect and in console when u will write your name in placeholder u will see in console that u r able to fetch the name that u just entered.
-            if(validateUserName(username)){
+            console.log("logging username: ",username);
                 fetchUserDetails(username);
             }
         })
